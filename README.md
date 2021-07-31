@@ -3,7 +3,7 @@ Building an accordion using VUEJS and Tailwind CSS
 
 Youtube video
 =============
-* Here is the youtube video [https://youtu.be/SpSQtoUcnio](https://youtu.be/SpSQtoUcnio)
+* Here is the youtube video [https://youtu.be/FRdHrYBN_Jc](https://youtu.be/FRdHrYBN_Jc)
 
 VueJS
 ============
