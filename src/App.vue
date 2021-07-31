@@ -1,15 +1,29 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="m-auto w-1/2">
+    <ImageSlider
+      v-bind:slides="slides"
+    />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ImageSlider from './components/ImageSlider.vue'
 
 export default {
   name: 'App',
+  data () {
+    return {
+      slides: [
+        "https://source.unsplash.com/random/800x400?i=1",
+        "https://source.unsplash.com/random/800x400?i=2",
+        "https://source.unsplash.com/random/800x400?i=3",
+        "https://source.unsplash.com/random/800x400?i=4",
+        "https://source.unsplash.com/random/800x400?i=5",
+      ]
+    }
+  },
   components: {
-    HelloWorld
+    ImageSlider
   }
 }
 </script>
@@ -19,8 +33,5 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
