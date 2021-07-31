@@ -4,15 +4,25 @@
       <div
         v-for="(slide, i) in slides"
         v-bind:key="slide"
-        class="absolute shadow-lg"
         v-bind:data-index="i"
+        class="absolute shadow-lg"
       >
         <img v-bind:src="slide" />
       </div>
     </div>
-    <div class="relative flex justify-between">
-      <button class="mt-4 pl-5 pr-5 pt-3 pb-3 rounded text-white font-bold bg-green-400" v-on:click="onPrevious()">Previous</button>
-      <button class="mt-4 pl-5 pr-5 pt-3 pb-3 rounded text-white font-bold bg-green-400" v-on:click="onNext()">Next</button>
+    <div class="flex justify-between">
+      <button
+        class="pt-3 pb-3 pl-5 pr-5 bg-green-400 rounded font-bold text-white"
+        v-on:click="onPrevious()"
+      >
+        Previous
+      </button>
+      <button
+        class="pt-3 pb-3 pl-5 pr-5 bg-green-400 rounded font-bold text-white"
+        v-on:click="onNext()"
+      >
+        Next
+      </button>
     </div>
   </div>
 </template>
@@ -22,80 +32,80 @@ export default {
   name: 'ImageSlider',
   data () {
     return {
-      currentSlide: 0,
+      currentSlideIndex: 0,
     }
   },
   props: {
     slides: Array
   },
   methods: {
-    animate (elem, animation, onAnimationEnd) {
-      const plainClassList = Array.prototype.slice.call(elem.classList)
+    animate (element, animation, onAnimationEnd) {
+      const plainClassList = Array.prototype.slice.call(element.classList);
       const animationsToRemove = plainClassList.filter(
         className => className.includes('animate__')
-      );
+      )
 
-      elem.classList.remove('hidden', ...animationsToRemove);
-      elem.classList.add('animate__animated', animation);
+      element.classList.remove('hidden', ...animationsToRemove);
+      element.classList.add('animate__animated', animation);
 
       if (onAnimationEnd) {
-        elem.addEventListener('animationend', onAnimationEnd, {once: true});
+        element.addEventListener('animationend', onAnimationEnd, {once:true})
       }
     },
     getNextSlideIndex () {
-      if (this.currentSlide + 1 < this.slides.length) {
-        return this.currentSlide + 1;
+      if (this.currentSlideIndex + 1 < this.slides.length) {
+        return this.currentSlideIndex + 1;
       }
 
       return 0;
     },
     getPreviousSlideIndex () {
-      if (this.currentSlide > 0) {
-        return this.currentSlide - 1;
+      if (this.currentSlideIndex > 0) {
+        return this.currentSlideIndex - 1;
       }
 
       return this.slides.length - 1;
     },
     onNext () {
-      const element = document.querySelector(`[data-index="${this.currentSlide}"]`);
+      const element = document.querySelector(`[data-index="${this.currentSlideIndex}"]`)
       this.animate(element, 'animate__fadeOutLeft', () => {
-        element.classList.add('hidden');
-      })
+        element.classList.add('hidden')
+      });
 
       const nextSlideIndex = this.getNextSlideIndex();
 
-      const nextElement = document.querySelector(`[data-index="${nextSlideIndex}"]`);
+      const nextElement = document.querySelector(`[data-index="${nextSlideIndex}"]`)
       this.animate(nextElement, 'animate__fadeInRight');
 
-      this.currentSlide = nextSlideIndex;
+      this.currentSlideIndex = nextSlideIndex;
     },
     onPrevious () {
-      const element = document.querySelector(`[data-index="${this.currentSlide}"]`);
+      const element = document.querySelector(`[data-index="${this.currentSlideIndex}"]`)
       this.animate(element, 'animate__fadeOutRight', () => {
-        element.classList.add('hidden');
-      })
+        element.classList.add('hidden')
+      });
 
       const previousSlideIndex = this.getPreviousSlideIndex();
 
-      const previousElement = document.querySelector(`[data-index="${previousSlideIndex}"]`);
+      const previousElement = document.querySelector(`[data-index="${previousSlideIndex}"]`)
       this.animate(previousElement, 'animate__fadeInLeft');
 
-      this.currentSlide = previousSlideIndex;
+      this.currentSlideIndex = previousSlideIndex;
     }
   },
   mounted () {
-    for (let i = 0; i < this.slides.length; i++) {
-      if (i !== this.currentSlide) {
-        const element = document.querySelector(`[data-index="${i}"]`);
+    this.slides.forEach((_, index) => {
+      if (index !== this.currentSlideIndex) {
+        const element = document.querySelector(`[data-index="${index}"`);
         element.classList.add('hidden');
       }
-    }
+    })
   }
 }
 </script>
 
 <style scoped>
 .slider-content {
-  height: 400px;
+  height: 250px;
 }
 </style>

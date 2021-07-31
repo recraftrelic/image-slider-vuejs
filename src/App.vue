@@ -14,11 +14,12 @@ export default {
   data () {
     return {
       slides: [
-        "https://source.unsplash.com/random/800x400?i=1",
-        "https://source.unsplash.com/random/800x400?i=2",
-        "https://source.unsplash.com/random/800x400?i=3",
-        "https://source.unsplash.com/random/800x400?i=4",
-        "https://source.unsplash.com/random/800x400?i=5",
+        'https://source.unsplash.com/random/800x400?i=1',
+        'https://source.unsplash.com/random/800x400?i=2',
+        'https://source.unsplash.com/random/800x400?i=3',
+        'https://source.unsplash.com/random/800x400?i=4',
+        'https://source.unsplash.com/random/800x400?i=5',
+        'https://source.unsplash.com/random/800x400?i=6',
       ]
     }
   },
