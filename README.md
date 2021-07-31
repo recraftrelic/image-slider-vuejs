@@ -1,24 +1,30 @@
-# image-slider
+Building an accordion using VUEJS and Tailwind CSS
+=============================================
 
-## Project setup
-```
-yarn install
-```
+Youtube video
+=============
+* Here is the youtube video [https://youtu.be/SpSQtoUcnio](https://youtu.be/SpSQtoUcnio)
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+VueJS
+============
+* VueJS Docs - [https://vuejs.org/v2/guide/](https://vuejs.org/v2/guide/)
+* Vue cli - [https://cli.vuejs.org/guide/installation.html](https://cli.vuejs.org/guide/installation.html)
 
-### Compiles and minifies for production
-```
-yarn build
-```
+TailwindCSS
+===========
+* TailwindCSS Docs - [https://tailwindcss.com/docs](https://tailwindcss.com/docs)
 
-### Lints and fixes files
-```
-yarn lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Animate.css
+===========
+* Animate.css Docs - [https://animate.style/](https://animate.style/)
+
+
+Website & links
+==============
+
+* My website - [http://manojsinghnegi.com/](http://manojsinghnegi.com/)
+* Follow me on medium - [https://medium.com/@manojsinghnegi](https://medium.com/@manojsinghnegi)
+* Follow me on Twitter - [https://twitter.com/manojnegiwd](https://twitter.com/manojnegiwd)
+
+* Recraft Relic website - [https://recraftrelic.com/](https://recraftrelic.com/)
